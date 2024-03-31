@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Предпроф</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='/style/style.css') }}">
+    <script src="{{ url_for('static', filename='/js/script.js') }}" defer></script>
+</head>
+<body>
+
+    <div class="choose_date_block">
+        <p class="choose_date_text">Выберите дату для отображения: </p>
+        <select name="dates" id="date-select">
+          <option value="">Выберите дату</option>
+            {% for index in range(days) %}
+                <option value={{ dates[index] }} > {{ dates[index] }}</option>
+            {% endfor %}
+        </select>
+
+        <button class="show_rooms" id="show_rooms_btn">Показать комнаты</button>
+    </div>
+
+
+    <div class="main_block">
+        <div class="date_part" id="date_part"></div>
+
+        <div class="input_data" id="input_data">
+            <div class="rooms_block" id="rooms_block">
+
+            </div>
+            <div class="info_block" id="text_block">
+                <div class="upper_part">
+                    Входные данные:
+                </div>
+                <div class="down_part">
+                    Ответ:
+                </div>
+            </div>
+
+            <div class="info_block" id="info_block">
+                <div class="upper_part" id="upper_part">
+                    <div class="first_row">
+                        <div class="text">Количество комнат на этаже:</div>
+                        <div class="text_span_upper1" id="text_span_upper1"></div>
+                    </div>
+                    <div class="second_row">
+                        <div class="text">Окна на этаже:</div>
+                        <div class="text_span_upper1" id="text_span_upper2"></div>
+                    </div>
+                </div>
+                <div class="down_part" id="down_part">
+                    <div class="first_row">
+                        <div class="text">Количество комнат:</div>
+                        <div class="text_span_upper1" id="text_span_upper3"></div>
+                    </div>
+                    <div class="second_row">
+                        <div class="text">Номера комнат:</div>
+                        <div class="text_span_upper1" id="text_span_upper4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
